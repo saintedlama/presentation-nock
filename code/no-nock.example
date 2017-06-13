@@ -1,0 +1,14 @@
+const userProfileMock = function(url, token, next) {
+  let body;
+
+  if (url === 'https://api.bitbucket.org/2.0/user') {
+    body = '...';
+  } else if (url === 'https://api.bitbucket.org/2.0/user/emails') {
+    body = '...'
+  } else {
+    throw new Error(`No mock is configured for ${url}`);
+  }
+
+  next(null, body, undefined);
+};
+
